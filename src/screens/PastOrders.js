@@ -6,7 +6,7 @@ export default function Admin() {
   const [orderData, setorderData] = useState([]);
 
   const fetchMyOrder = async () => {
-    await fetch("http://localhost:5000/api/auth/admin", {
+    await fetch("https://ovengenius.onrender.com/api/auth/admin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

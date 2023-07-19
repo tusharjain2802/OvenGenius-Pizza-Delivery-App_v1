@@ -6,7 +6,7 @@ export default function MyOrder() {
   const [orderData, setorderData] = useState({});
 
   const fetchMyOrder = async () => {
-    await fetch("http://localhost:5000/api/auth/myOrderData", {
+    await fetch("https://ovengenius.onrender.com/api/auth/myOrderData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
