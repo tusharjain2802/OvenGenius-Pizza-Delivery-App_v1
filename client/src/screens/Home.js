@@ -8,7 +8,7 @@ export default function Home() {
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
   const loadFoodItems = async () => {
-    let response = await fetch("http://localhost:5000/api/auth/foodData", {
+    let response = await fetch("https://ovengenius-api.onrender.com/api/auth/foodData", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

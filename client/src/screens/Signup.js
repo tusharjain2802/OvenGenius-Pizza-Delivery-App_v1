@@ -20,7 +20,7 @@ export default function Signup() {
     })
     // console.log(latlong)
     let [lat, long] = latlong
-    const response = await fetch("http://localhost:5000/api/auth/getlocation", {
+    const response = await fetch("https://ovengenius-api.onrender.com/api/auth/getlocation", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("https://ovengenius-api.onrender.com/api/auth/createuser", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
