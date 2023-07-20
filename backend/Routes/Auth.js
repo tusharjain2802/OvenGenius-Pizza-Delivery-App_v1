@@ -207,8 +207,8 @@ router.post("/create-checkout-session", async (req, res)=>{
                     quantity: item.qty 
                 }
         }),
-            success_url: 'http://localhost:3000/success',
-            cancel_url: 'http://localhost:3000/cancel'
+            success_url: 'https://ovengenius.onrender.com/success',
+            cancel_url: 'https://ovengenius.onrender.com/cancel'
         })
 
         res.json({url: session.url})
