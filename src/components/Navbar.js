@@ -13,8 +13,8 @@ export default function Navbar(props) {
     localStorage.setItem('temp', "first")
     let navigate = useNavigate();
     const handleLogout = () => {
-        localStorage.removeItem('token')
-
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('token');
         navigate("/login")
     }
 

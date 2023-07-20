@@ -7,7 +7,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://ovengenius.onrender.com/api/auth/login", {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
@@ -23,7 +23,11 @@ export default function Login() {
       //save the auth toke to local storage and redirect
       localStorage.setItem('userEmail', credentials.email)
       localStorage.setItem('token', json.authToken)
-      navigate("/");
+      if(credentials.email==="admin@og.com"){
+      navigate("/admin");
+      }else{
+        navigate("/");
+      }
 
     }
     else {

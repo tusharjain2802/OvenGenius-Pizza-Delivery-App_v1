@@ -17,7 +17,7 @@ export default function Cart() {
     
   }
   const handleCheckOut1 = async () => {
-    fetch("https://ovengenius.onrender.com/api/auth/create-checkout-session", {
+    fetch("http://localhost:5000/api/auth/create-checkout-session", {
 
       method: 'POST',
       headers: {
@@ -41,7 +41,7 @@ export default function Cart() {
   }
   const handleCheckOut2 = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("https://ovengenius.onrender.com/api/auth/orderData", {
+    let response = await fetch("http://localhost:5000/api/auth/orderData", {
 
       method: 'POST',
       headers: {

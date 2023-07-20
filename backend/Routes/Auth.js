@@ -15,7 +15,7 @@ const jwtSecret = process.env.JWT_SECRET_KEY
 
 app.use(
     cors({
-        origin:"https://ovengenius-v1.onrender.com", 
+        origin:"http://localhost:3000/", 
         
     })
 )
@@ -85,7 +85,7 @@ router.post('/login', [
 
         const pwdCompare = await bcrypt.compare(password, user.password); 
         if (!pwdCompare) {
-            return res.status(400).json({ success, error: "Try Logging in with correct credentials" });
+            return res.status(400).json({ success, error: "The password is Incorrect" });
         }
         const data = {
             user: {
@@ -207,8 +207,8 @@ router.post("/create-checkout-session", async (req, res)=>{
                     quantity: item.qty 
                 }
         }),
-            success_url: 'https://ovengenius-v1.onrender.com/success',
-            cancel_url: 'https://ovengenius-v1.onrender.com/cancel'
+            success_url: 'http://localhost:3000/success',
+            cancel_url: 'http://localhost:3000/cancel'
         })
 
         res.json({url: session.url})

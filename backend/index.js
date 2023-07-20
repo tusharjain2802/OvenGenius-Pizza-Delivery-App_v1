@@ -8,9 +8,9 @@ global.foodData = require('./db')(function call(err, data, CatData) {
 
 const express = require('express')
 const app = express()
-const port = 5000
+const port = 5000 || process.env.PORT
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://ovengenius-v1.onrender.com");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', require('./Routes/Auth'));
 
-app.listen(process.env.PORT|| process.env, () => {
+app.listen(port, () => {
   console.log(`listening on http://localhost:${port}`)
 })
 
