@@ -15,7 +15,7 @@ const jwtSecret = process.env.JWT_SECRET_KEY
 
 app.use(
     cors({
-        origin:"http://localhost:3000/", 
+        origin:"https://ovengenius.onrender.com", 
         
     })
 )
